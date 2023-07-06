@@ -10,9 +10,6 @@ function Footer(props){
                     <p>72000, Zenica</p>
                 </div>
                 <div>
-                    <img src="/logo.png" alt="Logo"></img>
-                </div>
-                <div>
                     <h3 style={{color: "white"}}>KONTAKT</h3>
                     <p>060/307-4200</p>
                     <p>turisticka@agencija.com</p>

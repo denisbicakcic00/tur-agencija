@@ -26,6 +26,7 @@ function Register(){
     return (
         <>
         <div class="forma" style={{ margin: '20px', display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center" }}>
+        <img src="/logo.png"></img>
             <div style={{ width: '400px', color: "white", backgroundColor: '#F94144', display: "flex", alignItems: "center", justifyContent: "center" }}>
                 <h2>REGISTRACIJA</h2>
             </div>
