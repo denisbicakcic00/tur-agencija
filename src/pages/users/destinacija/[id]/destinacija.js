@@ -57,9 +57,11 @@ const Destinacija = () => {
                     </div>
                 </div>
                 <div style={{display: "flex", width: '50%', justifyContent:'flex-end', alignItems: 'flex-end', marginTop: '15px'}}>
+                <a href={`/users/destinacija/${destination.id}/kupikartu`}>
                 <div style={{width: '85px', height: '40px', backgroundColor: '#F94144', borderRadius: '5px', display: 'table'}}>
                             <p style={{fontFamily:'sans-serif', color: 'white', textAlign: 'center', verticalAlign: 'middle', display: 'table-cell'}}>KUPI</p>
                         </div>
+                        </a>
                 </div>
                 </div>
 )}
