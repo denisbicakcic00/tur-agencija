@@ -1,7 +1,22 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import ImageBar from '../components/layouts/imagebar';
+import Recenzija from '@/components/layouts/recenzije';
+import { useRouter } from 'next/router';
+import recenzijaService, {load} from '@/services/reviews';
 
 const Landingpage = () => {
+
+  /*  const [recenizija, setR] = useState();
+    const router = useRouter();
+    const id = router.query.id;
+  async function getRecenzija(){
+    const {data} = await recenzijaService.load()
+    setRecenizija(data)
+  }
+  useEffect(()=> {
+    getRecenizija()
+  }, [])
+*/
   
   return (
     <>
@@ -65,32 +80,7 @@ const Landingpage = () => {
           <div style={{ marginLeft: 35 }}>
               <h1>Recenzije</h1>
           </div>
-          <div style={{ width: '85%', marginLeft: '7.5%', marginRight: '7.5%', marginTop: 50, marginBottom: 50, display: 'flex', justifyContent: 'space-around', alignItems: 'center', flexWrap: 'wrap' }}>
-              <div style={{ width: '20%', margin: 5 }}>
-                  <div style={{ height: 200, width: '100%', backgroundColor: '#f94144' }}></div>
-              </div>
-              <div style={{ width: '20%', margin: 5 }}>
-                  <div style={{ height: 200, width: '100%', backgroundColor: '#f94144' }}></div>
-              </div>
-              <div style={{ width: '20%', margin: 5 }}>
-                  <div style={{ height: 200, width: '100%', backgroundColor: '#f94144' }}></div>
-              </div>
-              <div style={{ width: '20%', margin: 5 }}>
-                  <div style={{ height: 200, width: '100%', backgroundColor: '#f94144' }}></div>
-              </div>
-              <div style={{ width: '20%', margin: 5 }}>
-                  <div style={{ height: 200, width: '100%', backgroundColor: '#f94144' }}></div>
-              </div>
-              <div style={{ width: '20%', margin: 5 }}>
-                  <div style={{ height: 200, width: '100%', backgroundColor: '#f94144' }}></div>
-              </div>
-              <div style={{ width: '20%', margin: 5 }}>
-                  <div style={{ height: 200, width: '100%', backgroundColor: '#f94144' }}></div>
-              </div>
-              <div style={{ width: '20%', margin: 5 }}>
-                  <div style={{ height: 200, width: '100%', backgroundColor: '#f94144' }}></div>
-              </div>
-          </div>
+          <Recenzija/>
       </div>
       </>
   );
