@@ -4,6 +4,7 @@ import { useForm } from 'react-hook-form'
 import { useRouter } from 'next/router';
 import { useState } from 'react';
 import userService from '@/services/user';
+import { setAccessToken } from "@/utils/auth";
 
 const Login = () =>{
   const router = useRouter();
@@ -15,6 +16,7 @@ const Login = () =>{
       if (kupac.status === 500) {
         return setMessage(kupac.message);
       }
+      setAccessToken(kupac.token);
         router.push('/');
   };
     return (
