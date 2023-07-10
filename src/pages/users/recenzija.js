@@ -31,7 +31,7 @@ const Recenzija = () =>{
 
     return (
         <>
-        <div class="forma" style={{margin: '20px', display:"flex", flexDirection:"column", justifyContent: "center", alignItems:"center"}}>
+        <div className="forma" style={{margin: '20px', display:"flex", flexDirection:"column", justifyContent: "center", alignItems:"center"}}>
             <img src="/logo.png"></img>
             <div style={{width: '400px', color: "white", backgroundColor: '#F94144',display: "flex", alignItems:"center", justifyContent: "center"}}>
             <h2>RECENZIJA</h2>
@@ -48,7 +48,7 @@ const Recenzija = () =>{
                     <input type="text" id="komentar" name="komentar" required style={{height: '25px', borderRadius: '10px', padding: '5px'}} {...register("komentar")}></input>
                 </div>
                 <div style={{height: '60px', width: '400px', display:"flex", justifyContent: "space-around", alignItems:"center", backgroundColor: '#F94144'}}>
-                    <button type="submit" style={{height: '25px', width: '100px', borderRadius: '10px', border:'none', outline: 'none', padding: '5px'}}>Ostavi recenziju</button>
+                    <button type="submit" style={{height: '25px', width: '150px', borderRadius: '10px', border:'none', outline: 'none', padding: '5px'}}>Ostavi recenziju</button>
                 </div>
             </div>
             </form>

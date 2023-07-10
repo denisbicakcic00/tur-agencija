@@ -12,12 +12,13 @@ const Login = () =>{
   const { register, handleSubmit, formState: { errors } } = useForm();
   const onSubmit = async (data) => {
       const kupac = await userService.login(data);
+      console.log(data)
 
       if (kupac.status === 500) {
         return setMessage(kupac.message);
       }
-      setAccessToken(kupac.token);
-        router.push('/');
+      await setAccessToken(data.token);
+        await router.push('/');
   };
     return (
         <>

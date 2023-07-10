@@ -16,7 +16,8 @@ export default async function handler(req, res) {
     return res.status(500).json({ status: 500, message: 'Provjerite da li ste ispravno upisali lozinku!' });
   }
 
-  const token = sign({ userId: kupac[0].id }, 'tajni_kljuc', { expiresIn: '7d' });
-
+  const token =  sign({ userId: kupac[0].id }, 'accessToken', { expiresIn: '7d' });
+ 
+console.log(data.token)
   res.status(200).json({ status: 200, message: 'Uspješno prijavljeni', token });
 }

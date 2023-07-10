@@ -46,6 +46,10 @@ const ImageBar = () => {
         style={{ height: 300, flexShrink: 0, marginRight: '10px' }}
       />
       </a>
+      <div style={{display:'flex', justifyContent: 'space-around'}}>
+      <h3>{destination.naziv}</h3> 
+      <h4>već od {destination.cijena}KM</h4>
+      </div>
     </div>
  ))}
 

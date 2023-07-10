@@ -1,4 +1,4 @@
-export function setAccessToken(token) {
+export async function setAccessToken(token) {
     localStorage.setItem('accessToken', token);
   }
   

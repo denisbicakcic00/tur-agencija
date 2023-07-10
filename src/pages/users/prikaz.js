@@ -1,46 +1,43 @@
 import React, { useEffect, useState } from 'react';
 import SearchBar from '@/components/layouts/searchbar';
 import searchService from '@/services/search';
+import { useRouter } from 'next/router';
 
 const Home = () => {
   const [searchResults, setSearchResults] = useState([]);
-
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const search = await searchService.load();
-        setSearchResults(search);
-      } catch (error) {
-        console.error(error);
-        // Handle error
-      }
-    };
-
-    fetchData();
-  }, []);
+  const [searchQuery, setSearchQuery] = useState('');
+  const router = useRouter();
+  const { query } = router.query; // Dohvaćanje parametara pretrage iz URL-a
 
   const handleSearch = async (searchQuery) => {
     try {
-      const res = await fetch(`/api/search/putovanja?destinacija=${searchQuery}`);
-      const data = await res.json();
-      setSearchResults(data);
-      console.log(data)
+      const res = await searchService.load(searchQuery);
+      setSearchResults(res.data); // Pritisnite rezultate pretrage iz objekta res.data
+      console.log(res.data);
     } catch (error) {
       console.error(error);
       // Handle error
     }
-  };  
+  };
 
+  const handleInputChange = (event) => {
+    setSearchQuery(event.target.value);
+  };
 
+  useEffect(() => {
+    handleSearch(searchQuery);
+    console.log('Pretraga:', searchQuery);
+  }, [searchQuery]);
 
   return (
     <>
-      {searchResults && (
-        <div key={searchResults.id}>
-          {/* Prikaz detalja putovanja */}
-        </div>
-      )}
-    </>
+    <SearchBar onSearch={handleSearch} value={searchQuery} onChange={handleInputChange} />
+    {searchResults && (
+      <div key={searchResults.id}>
+        <h1>{searchResults.id}</h1>
+      </div>
+    )}
+  </>
   );
 };
 
