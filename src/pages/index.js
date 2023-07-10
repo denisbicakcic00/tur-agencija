@@ -2,21 +2,11 @@ import React, {useState, useEffect} from 'react';
 import ImageBar from '../components/layouts/imagebar';
 import Recenzija from '@/components/layouts/recenzije';
 import { useRouter } from 'next/router';
+
 import recenzijaService, {load} from '@/services/reviews';
 
 const Landingpage = () => {
 
-  /*  const [recenizija, setR] = useState();
-    const router = useRouter();
-    const id = router.query.id;
-  async function getRecenzija(){
-    const {data} = await recenzijaService.load()
-    setRecenizija(data)
-  }
-  useEffect(()=> {
-    getRecenizija()
-  }, [])
-*/
   
   return (
     <>
@@ -27,6 +17,7 @@ const Landingpage = () => {
           <div>
               <ImageBar />
           </div>
+          <a href='/users/profile'>
           <div style={{ height: '250px', width: '80%', backgroundColor: '#f94144', marginLeft: '10%', marginRight: '10%', marginTop: 50, marginBottom: 50, display: 'flex', justifyContent: 'space-around', alignItems: 'center', borderRadius: '15px' }}>
               <img src='./loyality.png' alt='Loyality program' style={{ width: '60%', height: 220, borderRadius: '15px' }}></img>
               <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}>
@@ -35,6 +26,7 @@ const Landingpage = () => {
                   <h1 style={{ color: 'white' }}>PROGRAMU</h1>
               </div>
           </div>
+          </a>
           <div style={{ marginLeft: 35 }}>
               <h1>Popularne kategorije</h1>
           </div>

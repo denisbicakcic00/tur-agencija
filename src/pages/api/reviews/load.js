@@ -6,6 +6,7 @@ export default async function handler(req, res) {
       .select('recenzije.*', 'kupac.ime AS ime_kupca')
       .join('kupac', 'recenzije.kupac_id', 'kupac.id')
       .from('recenzije')
+      .where('ocjena', '>=', 4)
       .orderByRaw('RAND()')
       .limit(8);
 

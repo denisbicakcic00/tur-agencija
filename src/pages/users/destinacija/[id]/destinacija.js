@@ -32,17 +32,17 @@ const Destinacija = () => {
    
 
             <div style={{width: '100%', backgroundColor: '#fff', display: 'flex', alignItems: 'center', justifyContent: 'center', flexDirection: "column", margin: '15px'}} key={destination.id}>
-                <img src={destination.slika_url} alt="slika" style={{width: '80%'}}></img>
+                <img src={destination.slika_url} alt="slika" style={{width: '55%'}}></img>
                 <div style={{width: '90%', display: "flex", justifyContent: 'space-around', alignItems: 'center '}}>
                     <div>
                         <h1>{destination.naziv}</h1>
                     </div>
                     <div style={{display: 'flex', flexDirection: "column", margin: '15px'}}>
                         <div style={{width: '85px', height: '40px', backgroundColor: '#43AA8B', borderRadius: '5px', display: 'table', marginBottom:'10px'}}>
-                            <p style={{fontFamily:'sans-serif', color: 'white', textAlign: 'center', verticalAlign: 'middle', display: 'table-cell'}}>Bodovi</p>
+                            <p style={{fontFamily:'sans-serif', color: 'white', textAlign: 'center', verticalAlign: 'middle', display: 'table-cell'}}>Bodovi: {destination.bodovi}</p>
                         </div>
                         <div style={{width: '85px', height: '40px', backgroundColor: '#F94144', borderRadius: '5px', display: 'table'}}>
-                            <p style={{fontFamily:'sans-serif', color: 'white', textAlign: 'center', verticalAlign: 'middle', display: 'table-cell'}}>{destination.cijena}</p>
+                            <p style={{fontFamily:'sans-serif', color: 'white', textAlign: 'center', verticalAlign: 'middle', display: 'table-cell'}}>{destination.cijena}KM</p>
                         </div>
                     </div>
                 </div>

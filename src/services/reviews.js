@@ -1,5 +1,6 @@
 const reviewsService = {
-    load
+    load,
+    post
 }
 
 
@@ -9,5 +10,15 @@ async function load(){
 
     return reviews
 }
+
+async function post(data){
+    const res = await fetch('/api/reviews/post', {
+        headers:{"Content-Type": "application/json"},
+        method:'POST',
+        body:JSON.stringify(data)
+    })
+return  res.json()
+}
+
 
 export default reviewsService

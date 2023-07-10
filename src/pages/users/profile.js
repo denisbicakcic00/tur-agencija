@@ -4,7 +4,9 @@ const Profilepage = () => {
     return (
         <>
             <div style={{width: '100%', height: '460px', backgroundColor: '#f5f5f5', display: 'flex', alignItems: 'flex-end', justifyContent: 'center'}}>
-                <button style={{backgroundColor: '#f94144', color:'white', width: '100px', height: '40px', marginLeft:'50px', marginBottom: '80px'}}>Ocijeni</button>
+                <a href="/users/recenzija">
+                    <button style={{backgroundColor: '#f94144', color:'white', width: '100px', height: '40px', marginLeft:'50px', marginBottom: '80px'}}>Ocijeni</button>
+                </a>
                 <div style={{width: '50%', height: '100%', display: 'flex', flexDirection: "column", justifyContent: "center", alignItems: "center"}}>
                     <img src="/slika.png" alt="profilnaSlika" style={{ height: 250, width: 200}}></img>
                     <h2><br/>Zdravo, <br/> Denis!</h2>

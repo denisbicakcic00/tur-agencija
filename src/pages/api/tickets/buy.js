@@ -16,6 +16,29 @@ export default async function handler(req, res) {
        },
        ['id', 'broj_karata', 'broj_kartice', 'datum_valjanosti', 'cvc']
      );
+
+     
+    const putovanjeId = data.putovanje_id;
+    const kupacId = 1; // Postavite odgovarajuću vrijednost za kupca
+
+    const putovanje = await knex('putovanje')
+      .select('bodovi')
+      .where('id', '=', putovanjeId)
+      .first();
+
+    const bodovi = putovanje.bodovi;
+
+    const kupac = await knex('kupac')
+      .select('bodovi')
+      .where('id', '=', kupacId)
+      .first();
+
+    const trenutniBodovi = kupac.bodovi;
+    const ukupniBodovi = bodovi + trenutniBodovi;
+
+    await knex('kupac')
+      .where('id', '=', kupacId)
+      .update('bodovi', ukupniBodovi);
     res.status(200).json({ status: 200, message: 'Karte uspješno kupljene' });
   } catch (error) {
     console.error(error);
